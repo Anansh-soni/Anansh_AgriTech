@@ -1,0 +1,979 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+  font-family: 'Inter', Arial, sans-serif;
+  color: #203326;
+  background: #f6f8f2;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+button, a {
+  font: inherit;
+}
+
+a {
+  text-decoration: none;
+}
+
+.app {
+  min-height: 100vh;
+}
+
+.navbar {
+  min-height: 76px;
+  padding: 16px 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  background: #ffffff;
+  border-bottom: 1px solid #e6ecdf;
+}
+
+.navbar h2 {
+  margin: 0;
+  color: #26713e;
+  font-size: 25px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.navbar nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 28px;
+}
+
+.navbar nav a {
+  color: #47564a;
+  font-size: 14px;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+.navbar nav a:hover {
+  color: #26713e;
+}
+
+.login {
+  padding: 12px 18px;
+  border: none;
+  border-radius: 9px;
+  background: #26713e;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.login:hover, .primary-btn:hover {
+  background: #18572d;
+}
+
+.hero {
+  margin: 28px auto 0;
+  width: 90%;
+  max-width: 1250px;
+  min-height: 360px;
+  padding: 55px 7%;
+  border-radius: 24px;
+  background: linear-gradient(120deg, #163e2a, #287744 65%, #4d9854);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  overflow: hidden;
+}
+
+.hero-text {
+  max-width: 650px;
+}
+
+.tag {
+  display: inline-block;
+  margin: 0 0 18px;
+  padding: 8px 12px;
+  border: 1px solid #8ebc94;
+  border-radius: 30px;
+  color: #d7f3d7;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+}
+
+.hero h1 {
+  margin: 0 0 18px;
+  color: white;
+  font-size: clamp(36px, 5vw, 58px);
+  line-height: 1.15;
+  letter-spacing: -1.8px;
+}
+
+.hero-text > p:not(.tag) {
+  max-width: 560px;
+  margin: 0 0 28px;
+  color: #e1eee2;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.primary-btn {
+  display: inline-block;
+  padding: 14px 21px;
+  border-radius: 9px;
+  background: #e3f3c8;
+  color: #204c2b;
+  font-size: 14px;
+  font-weight: 700;
+  transition: 0.2s;
+}
+
+.primary-btn:hover {
+  background: white;
+}
+
+.hero-icon {
+  flex-shrink: 0;
+  width: 190px;
+  height: 190px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #83bd88;
+  border-radius: 50%;
+  background: #ffffff18;
+  font-size: 100px;
+  box-shadow: 0 0 0 20px #ffffff0b;
+}
+
+.dashboard {
+  width: 86%;
+  max-width: 1150px;
+  margin: 65px auto;
+}
+
+.dashboard > h2 {
+  margin: 0 0 10px;
+  color: #203326;
+  font-size: 30px;
+  letter-spacing: -0.7px;
+}
+
+.subtitle {
+  margin: 0 0 30px;
+  color: #758075;
+  font-size: 15px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.card {
+  min-width: 0;
+  padding: 25px 21px;
+  border: 1px solid #e4eadf;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 5px 20px #263b2608;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 28px #263b2612;
+}
+
+.card-icon {
+  width: 52px;
+  height: 52px;
+  display: grid;
+  place-items: center;
+  border-radius: 13px;
+  background: #edf6e8;
+  font-size: 27px;
+}
+
+.card h3 {
+  margin: 20px 0 10px;
+  color: #263b2b;
+  font-size: 17px;
+}
+
+.card p {
+  min-height: 66px;
+  margin: 0 0 20px;
+  color: #758075;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.card a {
+  color: #26713e;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.card a:hover {
+  text-decoration: underline;
+}
+
+.help {
+  margin: 0 auto 55px;
+  width: 86%;
+  padding: 35px;
+  border-radius: 16px;
+  background: #eaf2e3;
+  text-align: center;
+}
+
+.help h2 {
+  margin: 0 0 12px;
+  color: #234d2d;
+  font-size: 23px;
+}
+
+.help p {
+  margin: 0;
+  color: #657466;
+  line-height: 1.7;
+}
+
+footer {
+  padding: 25px 15px;
+  background: #173b28;
+  color: #dce9dc;
+  text-align: center;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+@media (max-width: 1000px) {
+  .navbar {
+    padding: 18px 5%;
+  }
+
+  .navbar nav {
+    gap: 15px;
+  }
+
+  .cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .hero-icon {
+    width: 140px;
+    height: 140px;
+    font-size: 75px;
+  }
+}
+
+@media (max-width: 650px) {
+  .navbar {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .navbar h2 {
+    width: 100%;
+    text-align: center;
+  }
+
+  .navbar nav {
+    gap: 16px;
+  }
+
+  .login {
+    padding: 10px 13px;
+  }
+
+  .hero {
+    width: 92%;
+    padding: 38px 25px;
+    text-align: center;
+    flex-direction: column-reverse;
+  }
+
+  .hero-icon {
+    width: 105px;
+    height: 105px;
+    font-size: 58px;
+  }
+
+  .hero h1 {
+    font-size: 38px;
+    letter-spacing: -1px;
+  }
+
+  .hero-text > p:not(.tag) {
+    font-size: 14px;
+  }
+
+  .dashboard {
+    width: 90%;
+    margin: 45px auto;
+  }
+
+  .dashboard > h2 {
+    font-size: 25px;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .card p {
+    min-height: 0;
+  }
+
+  .help {
+    width: 90%;
+    padding: 25px 18px;
+  }
+
+  .help h2 {
+    font-size: 20px;
+  }
+}
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 25, 20, 0.65);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.login-modal {
+  position: relative;
+  background: #ffffff;
+  width: 100%;
+  max-width: 420px;
+  padding: 35px;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  color: #20352b;
+}
+
+.login-modal h2 {
+  margin-bottom: 10px;
+  color: #176b4d;
+}
+
+.login-modal p {
+  color: #64756b;
+  margin-bottom: 22px;
+}
+
+.login-modal input {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 13px;
+  margin: 12px 0;
+  border: 1px solid #d5e2d9;
+  border-radius: 9px;
+  font-size: 15px;
+}
+
+.close-modal {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  border: none;
+  background: transparent;
+  font-size: 28px;
+  cursor: pointer;
+  color: #52645a;
+}
+
+.login-submit {
+  width: 100%;
+  padding: 13px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 9px;
+  background: #176b4d;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.switch-auth {
+  margin-top: 22px;
+  margin-bottom: 0 !important;
+}
+
+.switch-auth span {
+  color: #176b4d;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* My Farms section */
+.farms-section {
+  padding-top: 30px;
+  padding-bottom: 40px;
+}
+
+.farm-form {
+  max-width: 520px;
+  margin: 24px auto;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  background: #ffffff;
+  border: 1px solid #dce9dc;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(35, 85, 45, 0.08);
+}
+
+.farm-form input,
+.farm-form select {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 13px 14px;
+  border: 1px solid #cdddcf;
+  border-radius: 8px;
+  font-size: 15px;
+  background: #ffffff;
+  color: #263b2a;
+  outline: none;
+}
+
+.farm-form input:focus,
+.farm-form select:focus {
+  border-color: #388e3c;
+  box-shadow: 0 0 0 3px rgba(56, 142, 60, 0.12);
+}
+
+.farm-form .login-submit {
+  width: 100%;
+  margin-top: 4px;
+}
+
+.farm-form .login-submit:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.farms-section > .login-submit {
+  margin: 10px 0 20px;
+}
+
+.farms-section .card {
+  text-align: left;
+}
+
+.farms-section .card h3 {
+  color: #286c35;
+  margin-bottom: 12px;
+}
+
+.farms-section .card p {
+  overflow-wrap: anywhere;
+  line-height: 1.6;
+}
+
+.brand {
+  color: #26713e;
+  font-size: 25px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.account-actions,
+.inline-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.account-actions {
+  color: #47564a;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.admin-link {
+  color: #26713e;
+  font-weight: 700;
+}
+
+.section-action {
+  max-width: 320px;
+  display: block;
+  margin: 12px auto 20px;
+}
+
+.farm-form h3,
+.soil-panel h3,
+.booking-form h3 {
+  margin: 0 0 4px;
+  color: #286c35;
+  text-align: center;
+}
+
+.farm-form label,
+.weather-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  color: #43564a;
+  font-size: 14px;
+  text-align: left;
+}
+
+.farm-form textarea,
+.weather-form input,
+.farm-form input,
+.farm-form select {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 13px 14px;
+  border: 1px solid #cdddcf;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #263b2a;
+  outline: none;
+}
+
+.farm-form textarea {
+  resize: vertical;
+}
+
+.field-label input,
+.field-label select {
+  margin-top: 4px;
+}
+
+.status-message {
+  width: fit-content;
+  max-width: 100%;
+  margin: 12px auto 20px;
+  padding: 10px 14px;
+  border-radius: 9px;
+  background: #eaf4e8;
+  color: #286c35;
+  text-align: center;
+}
+
+.empty-state,
+.small-note {
+  color: #758075;
+  text-align: center;
+}
+
+.record-grid {
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  margin-top: 18px;
+}
+
+.record-card {
+  text-align: left;
+}
+
+.record-card p {
+  min-height: 0;
+  margin: 0 0 9px;
+}
+
+.record-card .field-label {
+  display: block;
+  margin: 12px 0;
+  color: #47564a;
+  font-size: 13px;
+}
+
+.record-card .field-label select {
+  width: 100%;
+  margin-top: 6px;
+  padding: 10px;
+  border: 1px solid #cdddcf;
+  border-radius: 8px;
+  background: #fff;
+  color: #263b2a;
+}
+
+.small-button {
+  padding: 8px 12px;
+  border: 1px solid #cbdccb;
+  border-radius: 8px;
+  background: #f1f7ee;
+  color: #286c35;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.small-button:hover {
+  background: #e3f0de;
+}
+
+.danger-button {
+  border-color: #efd3cf;
+  background: #fff6f4;
+  color: #9b3f34;
+}
+
+.weather-form {
+  max-width: 660px;
+  margin: 0 auto 24px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: end;
+  gap: 12px;
+}
+
+.weather-form .login-submit {
+  margin: 0;
+  min-height: 48px;
+}
+
+.weather-panel,
+.soil-panel {
+  margin: 20px auto;
+  padding: 24px;
+  border: 1px solid #dfe9da;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 5px 20px #263b2608;
+}
+
+.weather-current {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  text-align: center;
+}
+
+.weather-current strong {
+  color: #176b4d;
+  font-size: 56px;
+  line-height: 1.1;
+}
+
+.weather-current > span {
+  font-size: 19px;
+  font-weight: 700;
+}
+
+.weather-current p,
+.attribution,
+.small-note {
+  color: #758075;
+  font-size: 13px;
+}
+
+.eyebrow {
+  color: #26713e !important;
+  font-size: 11px !important;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+}
+
+.forecast-grid,
+.soil-grid,
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(135px, 1fr));
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.forecast-day,
+.soil-grid article,
+.stats-grid article {
+  padding: 14px;
+  border: 1px solid #e4eadf;
+  border-radius: 12px;
+  background: #f8fbf5;
+}
+
+.forecast-day {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  text-align: center;
+}
+
+.forecast-day strong,
+.forecast-day b {
+  color: #286c35;
+}
+
+.forecast-day span,
+.forecast-day small {
+  color: #758075;
+  font-size: 12px;
+}
+
+.attribution {
+  margin: 14px 0 0;
+  text-align: center;
+}
+
+.soil-panel > h3,
+.subheading {
+  margin: 0 0 8px;
+  color: #286c35;
+}
+
+.soil-grid article strong {
+  color: #286c35;
+}
+
+.soil-grid article p {
+  margin: 8px 0 0;
+  color: #68766b;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.notice-box {
+  margin: 0 0 22px;
+  padding: 16px 18px;
+  border-left: 4px solid #c69235;
+  border-radius: 8px;
+  background: #fff8e9;
+  color: #66532d;
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+.guidance-grid {
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+}
+
+.guidance-card p {
+  min-height: 0;
+  margin: 0 0 10px;
+  line-height: 1.6;
+}
+
+.guidance-card p strong {
+  color: #334b39;
+}
+
+.product-grid {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.product-card h3 {
+  margin: 12px 0 7px;
+}
+
+.product-card p {
+  min-height: 0;
+  margin: 0 0 12px;
+}
+
+.product-card > strong {
+  margin: 0 0 8px;
+  color: #176b4d;
+  font-size: 18px;
+}
+
+.product-category {
+  padding: 5px 9px;
+  border-radius: 20px;
+  background: #edf6e8;
+  color: #26713e;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.product-card .small-button {
+  margin: 5px 0;
+}
+
+.booking-form {
+  margin-top: 28px;
+}
+
+.booking-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.booking-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 15px 17px;
+  border: 1px solid #e4eadf;
+  border-radius: 12px;
+  background: #fff;
+  text-align: left;
+}
+
+.booking-row p {
+  margin: 5px 0 0;
+  color: #758075;
+  font-size: 13px;
+}
+
+.status-pill {
+  flex-shrink: 0;
+  padding: 6px 10px;
+  border-radius: 20px;
+  background: #eef2ee;
+  color: #52645a;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.status-pending { background: #fff3d9; color: #805d16; }
+.status-confirmed { background: #e4f4e8; color: #26713e; }
+.status-completed { background: #e8effb; color: #365c99; }
+.status-cancelled { background: #fff0ed; color: #9b3f34; }
+
+.subheading {
+  margin: 28px 0 14px;
+}
+
+.admin-section {
+  padding: 28px;
+  border: 1px solid #dfe9da;
+  border-radius: 18px;
+  background: #f9fcf7;
+}
+
+.stats-grid article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.stats-grid strong {
+  color: #176b4d;
+  font-size: 25px;
+}
+
+.stats-grid span {
+  color: #758075;
+  font-size: 12px;
+}
+
+.admin-table-wrap {
+  overflow-x: auto;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  text-align: left;
+}
+
+.admin-table th,
+.admin-table td {
+  padding: 12px;
+  border-bottom: 1px solid #e4eadf;
+}
+
+.admin-table th {
+  color: #286c35;
+  font-size: 12px;
+}
+
+.admin-table td {
+  color: #47564a;
+  font-size: 13px;
+}
+
+.admin-table select,
+.booking-row select {
+  padding: 8px;
+  border: 1px solid #cdddcf;
+  border-radius: 8px;
+  background: white;
+  color: #263b2a;
+}
+
+.switch-auth button {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #176b4d;
+  font-weight: 700;
+}
+
+@media (max-width: 900px) {
+  .navbar {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .navbar nav {
+    order: 3;
+    width: 100%;
+  }
+
+  .account-actions {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 600px) {
+  .weather-form {
+    grid-template-columns: 1fr;
+  }
+
+  .weather-form .login-submit {
+    width: 100%;
+  }
+
+  .weather-panel,
+  .soil-panel,
+  .admin-section {
+    padding: 17px;
+  }
+
+  .booking-row {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .farm-form {
+    padding: 18px;
+  }
+}
